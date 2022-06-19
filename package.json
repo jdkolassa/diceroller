@@ -4,7 +4,8 @@
   "description": "A Node.js based dice rolling program, intended to eventually support non-numerical sides, drop low/high, dupe low/high, and to have all sorts of caps and bonuses. Coded in Typescript for accuracy.",
   "main": "main.ts",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "test-ts": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'"
   },
   "keywords": [
     "rpg",
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@types/mocha": "^9.1.1",
-    "mocha": "^10.0.0"
+    "@types/node": "^18.0.0",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.8.1"
   }
 }

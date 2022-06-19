@@ -5,15 +5,19 @@
     "lib": [
       "es2021"
     ],
-    "module": "es2020",
+    "module": "CommonJS",
     "target": "es5",
+    "exclude": [
+      "./node_modules",
+      "./dist",
+      "./test"
+    ],
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "allowJs": true,
-    "checkJs": true,
-    "outDir": "./dist"
+    "outDir": "/dist"
   }
 }

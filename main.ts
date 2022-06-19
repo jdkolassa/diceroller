@@ -26,7 +26,7 @@ function validateNumbers(times: any, type: any, bonus: any): boolean {
     }
 }
 
-const rollCall = (roll: string) => {
+const rollCall = (roll: string): number => {
     let parsed = roll.split("/d{1,4}");
     if (parsed[1] !== "d") {
         throw new Error("Incorrect syntax, please use XdY+Z format when rolling.")
@@ -47,17 +47,17 @@ const rollCall = (roll: string) => {
         if (bonus) {
             switch (action) {
                 case ActionTypes.ADD:
-                    return result + bonus;
+                    result = result + bonus;
                 case ActionTypes.SUBTRACT:
-                    return result - bonus;
+                    result = result - bonus;
                 case ActionTypes.MULT:
-                    return result * bonus;
+                    result = result * bonus;
                 default:
                     break;
             }
-        } else {
-            return result;
         }
+
+        return result;
     }
 
 }
