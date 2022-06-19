@@ -1,0 +1,27 @@
+{
+  "name": "diceroller",
+  "version": "0.1.0",
+  "description": "A Node.js based dice rolling program, intended to eventually support non-numerical sides, drop low/high, dupe low/high, and to have all sorts of caps and bonuses. Coded in Typescript for accuracy.",
+  "main": "main.ts",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "rpg",
+    "dnd",
+    "random",
+    "dice",
+    "numbers",
+    "fun",
+    "typescript"
+  ],
+  "author": "Jeremy Kolassa",
+  "license": "MIT",
+  "dependencies": {
+    "mathjs": "^10.6.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "^9.1.1",
+    "mocha": "^10.0.0"
+  }
+}
