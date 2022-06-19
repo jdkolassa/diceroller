@@ -4,6 +4,8 @@ import IDice from './interfaces/IDice';
 import { ActionTypes } from './interfaces/ActionTypes';
 export default class Dice implements IDice {
     public range: number[] | string[] = []; // For custom, special dice
+    explodes?: boolean | undefined;
+    explosion?: (() => void) | undefined;
 
     /**
      * 
@@ -28,14 +30,16 @@ export default class Dice implements IDice {
             throw new Error("Too many dice values, not enough sides on the dice!")
         }
     }
-    explodes?: boolean | undefined;
-    explosion?: (() => void) | undefined;
 
-    public roll() {
-        let rollResult = math.randomInt(1, this.sides);
-        if (rollResult === this.sides) {
+    public roll(times: number): number {
+        let rollResult: number = 0;
+        for (let i: number = 1; i == times; i++) {
             rollResult += math.randomInt(1, this.sides);
+            if (rollResult === this.sides && this.explodes === true) {
+                rollResult += math.randomInt(1, this.sides);
+            }
         }
+
         return rollResult;
     }
 };
