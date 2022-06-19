@@ -17,6 +17,9 @@
   ],
   "author": "Jeremy Kolassa",
   "license": "MIT",
+  "quokka": {
+    "babel": true
+  },
   "dependencies": {
     "mathjs": "^10.6.1"
   },
